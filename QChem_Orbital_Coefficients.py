@@ -37,8 +37,6 @@ orbital_count = int((len(text_list) - 1) / len(eigenvalues)) - 2
 
 # find eigenvectors.
 def get_section(text_list, orbital_count):
-    # Takes an open file handle.
-    # Yields each section of lines having coefficients.
     lines = []
     start = False
     for line in text_list:
