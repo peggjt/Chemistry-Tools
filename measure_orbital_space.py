@@ -9,8 +9,13 @@ def main():
     molecule = molecule_build(geometry, basis)
 
     complete_space = [a for a in range(molecule.nao)]
+    occupied_space = [occ for occ in range(int(molecule.nelectron * .5))]
+    virtual_space = [virt for virt in complete_space if virt not in occupied_space]
+    
     print(molecule.basis)
     print(complete_space)
+    print(occupied_space)
+    print(virtual_space)
 
 
 def molecule_build(geometry, basis):
